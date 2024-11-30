@@ -1,0 +1,117 @@
+﻿/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle, #002240, #000e26);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    width: 90%; /* Adjust as needed */
+    max-width: 1200px;
+    border: 2px solid #4db8ff;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #021a33;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+}
+
+/* Header */
+header {
+    background: #021a33;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 10px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #4db8ff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Main Content */
+main {
+    background: #002240;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.name {
+    color: #4db8ff;
+}
+
+.subtitle {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.code-snippet {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #8ec0ff;
+}
+
+/* Footer */
+footer {
+    background: #021a33;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+}
+
+footer p {
+    color: #4db8ff;
+}
+
+footer .socials a {
+    margin: 0 10px;
+    color: #4db8ff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Buttons (Optional) */
+button, a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: 2px solid #4db8ff;
+    border-radius: 20px;
+    background: #021a33;
+    color: #4db8ff;
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover, a:hover {
+    background: #4db8ff;
+    color: #021a33;
+}
