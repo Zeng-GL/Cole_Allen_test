@@ -91,14 +91,33 @@ header, main, footer {
     z-index: 1;
 }
 
-/*WIP*/
-nav ul{
-    list-style-type: none;
+header{
+    justify-content: center;
+    flex-direction: row;
 }
+li {
+    display: inline-block; /* Allow items to line up horizontally */
+    margin: 0 10px; /* Optional: space between items */
+}
+ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0;
+    text-align: center; /* Center inline-block elements horizontally */
+}
+/*WIP*/
+
+nav a {
+    height: 100%;
+    display: inline-block;
+    justify-content: center; /* Center horizontally */
+    /*align-items: center; !* Center vertically *!*/
+    color: #4db8ff;
+    text-decoration: none;
+}
+
 /* Responsive for mobile devices */
 @media (max-width: 480px) {
-    nav a { /*A means link*/
-
+    nav a { /*A means anchor*/
         height: 100%;
         display: flex;
         justify-content: center; /* Center horizontally */
@@ -106,15 +125,6 @@ nav ul{
         color: #4db8ff;
         text-decoration: none;
     }
-}
-
-nav a {
-    height: 100%;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    color: #4db8ff;
-    text-decoration: none;
 }
 
 /*END WIP*/
