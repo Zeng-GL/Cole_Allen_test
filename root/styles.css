@@ -1,113 +1,113 @@
-﻿/* Reset Styles */
+﻿/*Variables!!!!*/
+:root {
+    --main-bg-color: #0a192f;
+    --container-bg-color: #021a33;
+    --container-border-color: #4db8ff;
+    --padding-size: 1vh;
+    --blur-radius: 100px;
+    --gradient-strength: 150%;
+}
+
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+    padding: var(--padding-size);
 }
 
-/* Body and Container */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    background: radial-gradient(circle, #002240, #000e26);
     font-family: 'Courier New', Courier, monospace;
+    background-color: var(--main-bg-color);
+    z-index: -1;
 }
-
 .container {
-    width: 90%; /* Adjust as needed */
-    max-width: 1200px;
-    border: 2px solid #4db8ff;
+    width: calc(100vw - 4 * var(--padding-size));
+    height: calc(100vh - 4 * var(--padding-size));
+    position: relative;
+    border: 2px solid var(--container-border-color);
     border-radius: 20px;
+    background: var(--container-bg-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    background: #021a33;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
 }
 
-/* Header */
-header {
-    background: #021a33;
+.background-light {
+    position: relative;
+    /*Offsets*/
+    left: 50%;
+    top: 50%;
+    /*Center on position of self*/
+    /*transform: translate( -50%, 50%);*/
+    /*Size using viewport units*/
+    width: 30vw;
+    height: 30vh;
+    /*Effects*/
+    filter: blur(var(--blur-radius));
+    opacity: 0.7;
+    /*Disable hover*/
+    pointer-events: none;
+    /*Position behind text*/
+    z-index: 0;
+}
+/*Top left light*/
+.background-light:nth-child(1) {
+    position: absolute;
+    transform: translate( -100%, -100%);
+    /*left: 35vw;*/
+    /*top: 35vh;*/
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0) var(--gradient-strength));
+}
+/*Bottom right light*/
+.background-light:nth-child(2) {
+    position: absolute;
+    transform: translate( 0%, 0%);
+    /*left: 65vw;*/
+    /*top: 65vh;*/
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.7), rgba(0, 255, 255, 0) var(--gradient-strength));
+}
+/*CURRENTLY NOT SURE IF WORKING?*/
+/* Responsive for tablets */
+@media (max-width: 768px) {
+    .background-light {
+        /* Increase blur effect */
+        filter: blur(var(--blur-radius + 15vw));
+    }
+}
+/* Responsive for mobile devices */
+@media (max-width: 480px) {
+    .background-light {
+        /* Increase blur effect */
+        filter: blur(--blur-radius + 20vw);
+    }
+}
+/*END OF CURRENTLY NOT SURE IF WORKING?*/
+
+/*TODO ALL BELOW HERE*/
+header, main, footer {
+    position: relative;
     border-radius: 20px;
-    padding: 20px;
-    margin: 10px;
+    /*Position on top of cool background*/
+    z-index: 1;
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-}
-
-nav ul li a {
+nav a {
     color: #4db8ff;
     text-decoration: none;
-    font-size: 1rem;
 }
 
-/* Main Content */
-main {
-    background: #002240;
-    border-radius: 20px;
-    padding: 40px;
-    margin: 10px;
-    text-align: center;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-.name {
+h1, .name, .subtitle, .code-snippet {
     color: #4db8ff;
 }
 
-.subtitle {
+.subtitle, .code-snippet {
     color: #ffffff;
-    font-size: 1.2rem;
-    margin-top: 10px;
 }
 
-.code-snippet {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #8ec0ff;
-}
-
-/* Footer */
-footer {
-    background: #021a33;
-    border-radius: 20px;
-    text-align: center;
-    padding: 20px;
-    margin: 10px;
-}
-
-footer p {
-    color: #4db8ff;
-}
-
-footer .socials a {
-    margin: 0 10px;
-    color: #4db8ff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Buttons (Optional) */
 button, a {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 20px;
     border: 2px solid #4db8ff;
     border-radius: 20px;
     background: #021a33;
     color: #4db8ff;
-    font-size: 1rem;
-    text-align: center;
     text-decoration: none;
-    cursor: pointer;
     transition: background 0.3s, color 0.3s;
 }
 
