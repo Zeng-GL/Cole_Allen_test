@@ -20,6 +20,8 @@ body {
     z-index: -1;
 }
 .container {
+    margin: 0 auto;
+    max-width: 1600px;
     width: calc(100vw - 4 * var(--padding-size));
     height: calc(100vh - 4 * var(--padding-size));
     position: relative;
@@ -89,10 +91,33 @@ header, main, footer {
     z-index: 1;
 }
 
+/*WIP*/
+nav ul{
+    list-style-type: none;
+}
+/* Responsive for mobile devices */
+@media (max-width: 480px) {
+    nav a { /*A means link*/
+
+        height: 100%;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        color: #4db8ff;
+        text-decoration: none;
+    }
+}
+
 nav a {
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     color: #4db8ff;
     text-decoration: none;
 }
+
+/*END WIP*/
 
 h1, .name, .subtitle, .code-snippet {
     color: #4db8ff;
