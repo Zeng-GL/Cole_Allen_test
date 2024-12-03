@@ -115,17 +115,33 @@ nav a {
     text-decoration: none;
 }
 
-/* Responsive for mobile devices */
+/* PHONE DISPLAY SETUP */
 @media (max-width: 480px) {
-    nav a { /*A means anchor*/
+    ul {
+        /* Ensure UL stretches */
         height: 100%;
         display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        color: #4db8ff;
-        text-decoration: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        width: 100%;
+        padding: 0;
+    }
+
+    li {
+        /* Ensure LI takes full width */
+        width: 100%;
+    }
+
+    nav a {
+        /* Ensure links fill and are centered */
+        display: block;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
     }
 }
+/*ENSURE BUTTONS SHOW IN GRID OR SINGLE LINE ONLY*/
 
 /*END WIP*/
 
