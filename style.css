@@ -3,6 +3,8 @@
     --main-bg-color: #0a192f;
     --container-bg-color: #021a33;
     --container-border-color: #4db8ff;
+    --primaryText-color: #ffffff;
+    --secondaryText-color: #4db8ff;
     --padding-size: 1vh;
     --blur-radius: 100px;
     --gradient-strength: 150%;
@@ -95,6 +97,16 @@ header{
     justify-content: center;
     flex-direction: row;
 }
+/*Center footer */
+footer {
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: var(--padding-size);
+}
 li {
     display: inline-block; /* Allow items to line up horizontally */
     margin: 0 10px; /* Optional: space between items */
@@ -116,7 +128,7 @@ nav a {
 }
 
 /* PHONE DISPLAY SETUP */
-@media (max-width: 480px) {
+@media (max-width: 680px) {
     ul {
         /* Ensure UL stretches */
         height: 100%;
@@ -146,17 +158,21 @@ nav a {
 /*END WIP*/
 
 h1, .name, .subtitle, .code-snippet {
-    color: #4db8ff;
+    color: var(--secondaryText-color);
+}
+
+p {
+    color: var(--primaryText-color);
 }
 
 .subtitle, .code-snippet {
-    color: #ffffff;
+    color: var(--primaryText-color);
 }
 
 button, a {
     border: 2px solid #4db8ff;
     border-radius: 20px;
-    background: #021a33;
+    background: var(--container-bg-color);
     color: #4db8ff;
     text-decoration: none;
     transition: background 0.3s, color 0.3s;
