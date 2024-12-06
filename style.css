@@ -118,14 +118,14 @@ ul {
 }
 /*WIP*/
 
-nav a {
-    height: 100%;
-    display: inline-block;
-    justify-content: center; /* Center horizontally */
-    /*align-items: center; !* Center vertically *!*/
-    color: #4db8ff;
-    text-decoration: none;
-}
+/*nav a {*/
+/*    height: 100%;*/
+/*    display: inline-block;*/
+/*    justify-content: center; !* Center horizontally *!*/
+/*    !*align-items: center; !* Center vertically *!*!*/
+/*    color: #4db8ff;*/
+/*    text-decoration: none;*/
+/*}*/
 
 /* PHONE DISPLAY SETUP */
 @media (max-width: 680px) {
@@ -154,8 +154,24 @@ nav a {
     }
 }
 /*ENSURE BUTTONS SHOW IN GRID OR SINGLE LINE ONLY*/
-
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+/*525 is exactly when it becomes 2 lines*/
+@media (max-width: 525px) {
+    .button-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
 /*END WIP*/
+
 
 h1, .name, .subtitle, .code-snippet {
     color: var(--secondaryText-color);
