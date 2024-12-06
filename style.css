@@ -1,4 +1,4 @@
-﻿/* Variables */
+﻿/*Variables!!!!*/
 :root {
     --main-bg-color: #0a192f;
     --container-bg-color: #021a33;
@@ -21,7 +21,6 @@ body {
     background-color: var(--main-bg-color);
     z-index: -1;
 }
-
 .container {
     margin: 0 auto;
     max-width: 1600px;
@@ -40,6 +39,8 @@ body {
     /*Offsets*/
     left: 50%;
     top: 50%;
+    /*Center on position of self*/
+    /*transform: translate( -50%, 50%);*/
     /*Size using viewport units*/
     width: 30vw;
     height: 30vh;
@@ -51,36 +52,40 @@ body {
     /*Position behind text*/
     z-index: 0;
 }
-
-/* Top left light */
+/*Top left light*/
 .background-light:nth-child(1) {
-    transform: translate(-100%, -100%);
+    position: absolute;
+    transform: translate( -100%, -100%);
+    /*left: 35vw;*/
+    /*top: 35vh;*/
     background: radial-gradient(circle, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0) var(--gradient-strength));
 }
-
-/* Bottom right light */
+/*Bottom right light*/
 .background-light:nth-child(2) {
-    transform: translate(0%, 0%);
+    position: absolute;
+    transform: translate( 0%, 0%);
+    /*left: 65vw;*/
+    /*top: 65vh;*/
     background: radial-gradient(circle, rgba(0, 255, 0, 0.7), rgba(0, 255, 255, 0) var(--gradient-strength));
 }
-
+/*CURRENTLY NOT SURE IF WORKING?*/
 /* Responsive for tablets */
 @media (max-width: 768px) {
     .background-light {
         /* Increase blur effect */
-        filter: blur(calc(var(--blur-radius) + 15vw));
+        filter: blur(var(--blur-radius + 15vw));
     }
 }
-
 /* Responsive for mobile devices */
 @media (max-width: 480px) {
     .background-light {
         /* Increase blur effect */
-        filter: blur(calc(var(--blur-radius) + 20vw));
+        filter: blur(--blur-radius + 20vw);
     }
 }
+/*END OF CURRENTLY NOT SURE IF WORKING?*/
 
-/* Content structure */
+/*TODO ALL BELOW HERE*/
 header, main, footer {
     position: relative;
     border-radius: 20px;
@@ -88,7 +93,7 @@ header, main, footer {
     z-index: 1;
 }
 
-header {
+header{
     justify-content: center;
     flex-direction: row;
 }
@@ -102,19 +107,27 @@ footer {
     align-items: center;
     padding: var(--padding-size);
 }
-
 li {
     display: inline-block; /* Allow items to line up horizontally */
-    margin: 0 10px; /* Space between items */
+    margin: 0 10px; /* Optional: space between items */
 }
-
 ul {
     list-style-type: none; /* Remove bullets */
     padding: 0;
     text-align: center; /* Center inline-block elements horizontally */
 }
+/*WIP*/
 
-/* Phone display setup */
+/*nav a {*/
+/*    height: 100%;*/
+/*    display: inline-block;*/
+/*    justify-content: center; !* Center horizontally *!*/
+/*    !*align-items: center; !* Center vertically *!*!*/
+/*    color: #4db8ff;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/* PHONE DISPLAY SETUP */
 @media (max-width: 680px) {
     ul {
         /* Ensure UL stretches */
@@ -137,10 +150,10 @@ ul {
         display: block;
         text-align: center;
         padding: 10px;
+
     }
 }
-
-/* Ensure buttons show in grid or single line only */
+/*ENSURE BUTTONS SHOW IN GRID OR SINGLE LINE ONLY*/
 .button-container {
     display: flex;
     flex-direction: row;
@@ -150,7 +163,6 @@ ul {
     gap: 10px;
     margin-bottom: 20px;
 }
-
 /*525 is exactly when it becomes 2 lines*/
 @media (max-width: 525px) {
     .button-container {
@@ -158,20 +170,8 @@ ul {
         align-items: stretch;
     }
 }
+/*END WIP*/
 
-button, a {
-    border: 2px solid var(--container-border-color); /* Unified colors */
-    border-radius: 10px;
-    background: var(--container-bg-color);
-    color: var(--container-border-color);
-    text-decoration: none;
-    transition: background 0.3s, color 0.3s;
-}
-
-button:hover, a:hover {
-    background: var(--container-border-color);
-    color: var(--container-bg-color);
-}
 
 h1, .name, .subtitle, .code-snippet {
     color: var(--secondaryText-color);
@@ -185,3 +185,16 @@ p {
     color: var(--primaryText-color);
 }
 
+button, a {
+    border: 2px solid #4db8ff;
+    border-radius: 10px;
+    background: var(--container-bg-color);
+    color: #4db8ff;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover, a:hover {
+    background: #4db8ff;
+    color: #021a33;
+}
