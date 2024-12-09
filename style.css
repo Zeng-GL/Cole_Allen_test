@@ -198,3 +198,8 @@ button:hover, a:hover {
 	background: #4db8ff;
 	color: #021a33;
 }
+
+/* fontawesomeconfig */
+i {
+	padding: 0px;
+}
