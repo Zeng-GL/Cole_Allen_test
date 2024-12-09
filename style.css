@@ -1,5 +1,6 @@
 ﻿/*Variables!!!!*/
 :root {
+	--phone-display-width: 680px;
 	--main-bg-color: #0a192f;
 	--container-bg-color: #021a33;
 	--container-border-color: #4db8ff;
@@ -8,6 +9,7 @@
 	--padding-size: 1vh;
 	--blur-radius: 100px;
 	--gradient-strength: 150%;
+	--link-hover-color: #0073b1;
 }
 
 * {
@@ -102,17 +104,51 @@ header {
 	flex-direction: row;
 }
 
-/*Center footer */
+/* FOOTER START */
 footer {
 	justify-content: center;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	display: flex;
+	flex-direction: column; /* Ensure flex direction is column */
 	align-items: center;
 	padding: var(--padding-size);
+	background-color: var(--container-bg-color);
+	color: var(--primaryText-color);
 }
 
+footer p {
+	font-weight: bold;
+	margin-bottom: calc(var(--padding-size) / 2);
+}
+
+footer .socials {
+	display: flex;
+	justify-content: center;
+	gap: 20px;
+}
+
+footer .socials a {
+	color: var(--primaryText-color);
+	text-decoration: none;
+	font-size: 16px;
+	transition: color 0.3s;
+}
+
+footer .socials a:hover {
+	color: var(--link-hover-color); /* Using the new hover color variable */
+}
+
+/* Responsive styling */
+@media (max-width: var(--phone-display-width)) {
+	footer .socials {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+/* FOOTER END */
 li {
 	display: inline-block; /* Allow items to line up horizontally */
 	margin: 0 10px; /* Optional: space between items */
@@ -127,7 +163,7 @@ ul {
 /*WIP*/
 
 /* PHONE DISPLAY SETUP */
-@media (max-width: 680px) {
+@media (max-width: var(--phone-display-width)) {
 	ul {
 		/* Ensure UL stretches */
 		height: 100%;
@@ -161,6 +197,10 @@ ul {
 	align-items: center;
 	gap: 10px;
 	margin-bottom: 20px;
+}
+
+button, .button-container a {
+	text-align: center;
 }
 
 /*525 is exactly when it becomes 2 lines*/
@@ -199,7 +239,7 @@ button:hover, a:hover {
 	color: #021a33;
 }
 
-/* fontawesomeconfig */
+/* fontawesome config */
 i {
 	padding: 0px;
 }
