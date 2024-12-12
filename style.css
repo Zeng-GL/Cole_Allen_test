@@ -4,8 +4,8 @@
 	--main-bg-color: #0a192f;
 	--container-bg-color: #021a33;
 	--container-border-color: #4db8ff;
-	--primaryText-color: #ffffff;
-	--secondaryText-color: #4db8ff;
+	--primary-text-color: #ffffff;
+	--secondary-text-color: #4db8ff;
 	--padding-size: 1vh;
 	--blur-radius: 100px;
 	--gradient-strength: 150%;
@@ -14,14 +14,13 @@
 
 * {
 	box-sizing: border-box;
-	margin: 0; /* Remove default margin */
+	margin: 0;
 	padding: var(--padding-size);
 }
 
 body {
 	font-family: "Courier New", Courier, monospace;
 	background-color: var(--main-bg-color);
-	z-index: -1;
 }
 
 .container {
@@ -38,11 +37,7 @@ body {
 }
 
 .background-light {
-	position: relative;
-	/*Offsets*/
-	left: 50%;
-	top: 50%;
-	/*Size using viewport units*/
+	position: absolute;
 	width: 30vw;
 	height: 30vh;
 	/*Effects*/
@@ -56,42 +51,17 @@ body {
 
 /*Top left light*/
 .background-light:nth-child(1) {
-	position: absolute;
-	transform: translate(-100%, -100%);
-	/*left: 35vw;*/
-	/*top: 35vh;*/
+	transform: translate(50%, 50%); /* Top-left */
 	background: radial-gradient(circle, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0) var(--gradient-strength));
 }
 
 /*Bottom right light*/
 .background-light:nth-child(2) {
-	position: absolute;
-	transform: translate(0%, 0%);
-	/*left: 65vw;*/
-	/*top: 65vh;*/
+	transform: translate(150%, 150%); /* Bottom-right */
 	background: radial-gradient(circle, rgba(0, 255, 0, 0.7), rgba(0, 255, 255, 0) var(--gradient-strength));
 }
 
-/*CURRENTLY NOT SURE IF WORKING?*/
-/* Responsive for tablets */
-@media (max-width: 768px) {
-	.background-light {
-		/* Increase blur effect */
-		filter: blur(var(--blur-radius+15vw));
-	}
-}
 
-/* Responsive for mobile devices */
-@media (max-width: 480px) {
-	.background-light {
-		/* Increase blur effect */
-		filter: blur(--blur-radius+20vw);
-	}
-}
-
-/*END OF CURRENTLY NOT SURE IF WORKING?*/
-
-/*TODO ALL BELOW HERE*/
 header, main, footer {
 	position: relative;
 	border-radius: 20px;
@@ -100,22 +70,21 @@ header, main, footer {
 }
 
 header {
+	display: flex;
 	justify-content: center;
-	flex-direction: row;
 }
 
-/* FOOTER START */
 footer {
 	justify-content: center;
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	display: flex;
-	flex-direction: column; /* Ensure flex direction is column */
+	flex-direction: column;
 	align-items: center;
 	padding: var(--padding-size);
 	background-color: var(--container-bg-color);
-	color: var(--primaryText-color);
+	color: var(--primary-text-color);
 }
 
 footer p {
@@ -129,18 +98,6 @@ footer .socials {
 	gap: 20px;
 }
 
-footer .socials a {
-	color: var(--primaryText-color);
-	text-decoration: none;
-	font-size: 16px;
-	transition: color 0.3s;
-}
-
-footer .socials a:hover {
-	color: var(--link-hover-color); /* Using the new hover color variable */
-}
-
-/* Responsive styling */
 @media (max-width: var(--phone-display-width)) {
 	footer .socials {
 		flex-direction: column;
@@ -148,47 +105,19 @@ footer .socials a:hover {
 	}
 }
 
-/* FOOTER END */
-li {
-	display: inline-block; /* Allow items to line up horizontally */
-	margin: 0 10px; /* Optional: space between items */
+
+/* Generic link styling */
+a {
+	color: var(--secondary-text-color);
+	text-decoration: underline;
+	transition: color 0.3s;
 }
 
-ul {
-	list-style-type: none; /* Remove bullets */
-	padding: 0;
-	text-align: center; /* Center inline-block elements horizontally */
+a:hover {
+	color: var(--link-hover-color);
 }
 
-/*WIP*/
 
-/* PHONE DISPLAY SETUP */
-@media (max-width: var(--phone-display-width)) {
-	ul {
-		/* Ensure UL stretches */
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: stretch;
-		width: 100%;
-		padding: 0;
-	}
-
-	li {
-		/* Ensure LI takes full width */
-		width: 100%;
-	}
-
-	nav a {
-		/* Ensure links fill and are centered */
-		display: block;
-		text-align: center;
-		padding: 10px;
-	}
-}
-
-/*ENSURE BUTTONS SHOW IN GRID OR SINGLE LINE ONLY*/
 .button-container {
 	display: flex;
 	flex-direction: row;
@@ -199,47 +128,44 @@ ul {
 	margin-bottom: 20px;
 }
 
-button, .button-container a {
-	text-align: center;
+/* Button styling */
+button {
+	border: 2px solid var(--secondary-text-color);
+	border-radius: 10px;
+	background: var(--container-bg-color);
+	color: var(--primary-text-color);
+	text-decoration: none; /* Needed to override default button styling */
+	padding: 10px 20px; /* Add padding to the button */
+	cursor: pointer; /* Add pointer cursor on hover */
+	transition: background 0.3s, color 0.3s;
 }
 
-/*525 is exactly when it becomes 2 lines*/
+
+button:hover {
+	background: var(--secondary-text-color);
+	color: var(--container-bg-color);
+}
+
+
 @media (max-width: 525px) {
 	.button-container {
 		flex-direction: column;
 		align-items: stretch;
+		width: 100%;
 	}
 }
 
-/*END WIP*/
 
-h1, .name, .subtitle, .code-snippet {
-	color: var(--secondaryText-color);
+h1 {
+	color: var(--secondary-text-color);
 }
 
 p {
-	color: var(--primaryText-color);
+	color: var(--primary-text-color);
 }
 
-.subtitle, .code-snippet {
-	color: var(--primaryText-color);
-}
-
-button, a {
-	border: 2px solid #4db8ff;
-	border-radius: 10px;
-	background: var(--container-bg-color);
-	color: #4db8ff;
-	text-decoration: none;
-	transition: background 0.3s, color 0.3s;
-}
-
-button:hover, a:hover {
-	background: #4db8ff;
-	color: #021a33;
-}
 
 /* fontawesome config */
 i {
-	padding: 0px;
+	padding: 0;
 }
