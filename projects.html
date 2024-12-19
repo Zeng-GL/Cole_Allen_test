@@ -26,12 +26,24 @@
 
     <main>
         <section id="projects">
-            <!-- Introduction text -->
             <h1>Projects</h1>
             <p>
-                This is text
-                <a href="https://github.com/Icewav3/Icewav3.github.io" target="_blank">This is a link</a>
+                Select one of the projects below to see more details or try out demos.
             </p>
+            <div class="projects-grid">
+                <div class="project-card" onclick="window.location.href='placeholder.html'">
+                    <img alt="Game Placeholder" class="placeholder-image" src="https://via.placeholder.com/300x200">
+                    <img alt="Playing GIF" class="gif-image"
+                         src="https://via.placeholder.com/300x200/ff0000/ffffff?text=Gif">
+                    <span class="project-title">Game 1</span>
+                </div>
+                <div class="project-card" onclick="window.location.href='platformer/index.html'">
+                    <img alt="Game Placeholder" class="placeholder-image" src="https://via.placeholder.com/300x200">
+                    <img alt="Playing GIF" class="gif-image" src="assets/gifs/platformer.gif">
+                    <span class="project-title">Platformer Game</span>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
         </section>
     </main>
 
