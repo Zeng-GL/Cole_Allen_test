@@ -49,7 +49,11 @@ body {
 }
 
 .background-light {
-	position: absolute;
+	position: relative;
+	/*Offsets*/
+	left: 50%;
+	top: 50%;
+	/*Size using viewport units*/
 	width: 30vw;
 	height: 30vh;
 	/*Effects*/
@@ -63,13 +67,19 @@ body {
 
 /*Top left light*/
 .background-light:nth-child(1) {
-	transform: translate(50%, 50%); /* Top-left */
+	position: absolute;
+	transform: translate(-100%, -100%);
+	/*left: 35vw;*/
+	/*top: 35vh;*/
 	background: radial-gradient(circle, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0) var(--gradient-strength));
 }
 
 /*Bottom right light*/
 .background-light:nth-child(2) {
-	transform: translate(150%, 150%); /* Bottom-right */
+	position: absolute;
+	transform: translate(0%, 0%);
+	/*left: 65vw;*/
+	/*top: 65vh;*/
 	background: radial-gradient(circle, rgba(0, 255, 0, 0.7), rgba(0, 255, 255, 0) var(--gradient-strength));
 }
 
