@@ -259,7 +259,22 @@ p {
 	object-fit: contain; /* Resize the image while maintaining its aspect ratio */
 }
 
+.game-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-container iframe {
+	width: 100%; /* Takes full width of container */
+	border: none; /* Remove border */
+	display: block;
+}
+
 /* fontawesome config */
 i {
 	padding: 0;
 }
+

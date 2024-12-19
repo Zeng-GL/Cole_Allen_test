@@ -22,20 +22,29 @@
 
     <main>
         <h1>Platformer Game</h1>
-        <p>Enjoy the platformer game I built below!</p>
-        <!-- TODO: broken -->
-        <!-- Embed the game -->
+        <p>Check out this simple platformer I made in javascript:</p>
+        <!-- embed is +40px for some reason -->
         <div class="game-container">
             <iframe
                     src="platformerGame.html"
-                    style="width: 100%; height: 600px; border: none;"
-                    title="Platformer Game"></iframe>
+                    style="width: 640px; height: 440px; border: none;"
+                    title="Platformer Game">
+            </iframe>
         </div>
+        <!-- Fallback message if JavaScript is disabled -->
+        <noscript>
+            <p style="color: var(--primary-text-color); text-align: center;">
+                The game requires JavaScript to run. Please enable JavaScript in your browser to play the game.
+            </p>
+        </noscript>
+        <p>Controls: Arrow keys and shift to dash while pressing a directional key.</p>
     </main>
 
     <!-- Footer section -->
+    <div class="push"></div>
+
     <footer>
-        <p>Back to <a href="../projects.html">Projects Page</a></p>
+        <button onclick="window.location.href='../projects.html'">Back to Projects</button>
     </footer>
 </div>
 </body>
