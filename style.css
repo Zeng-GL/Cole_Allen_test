@@ -69,8 +69,6 @@ body {
 .background-light:nth-child(1) {
 	position: absolute;
 	transform: translate(-100%, -100%);
-	/*left: 35vw;*/
-	/*top: 35vh;*/
 	background: radial-gradient(circle, rgba(0, 255, 255, 0.7), rgba(0, 0, 255, 0) var(--gradient-strength));
 }
 
@@ -78,8 +76,6 @@ body {
 .background-light:nth-child(2) {
 	position: absolute;
 	transform: translate(0%, 0%);
-	/*left: 65vw;*/
-	/*top: 65vh;*/
 	background: radial-gradient(circle, rgba(0, 255, 0, 0.7), rgba(0, 255, 255, 0) var(--gradient-strength));
 }
 
@@ -94,6 +90,7 @@ header, main, footer {
 header {
 	display: flex;
 	justify-content: center;
+	width: 100%;
 }
 
 
@@ -119,12 +116,12 @@ footer .socials {
 	gap: 20px;
 }
 
-@media (max-width: var(--phone-display-width)) {
-	footer .socials {
-		flex-direction: column;
-		gap: 10px;
-	}
-}
+/* @media (max-width: 680px) { */
+/* 	footer .socials { */
+/* 		flex-direction: column; */
+/* 		gap: 10px; */
+/* 	} */
+/* } */
 
 
 /* Generic link styling */
@@ -166,7 +163,6 @@ button:hover {
 	background: var(--secondary-text-color);
 	color: var(--container-bg-color);
 }
-
 
 @media (max-width: 525px) {
 	.button-container {
