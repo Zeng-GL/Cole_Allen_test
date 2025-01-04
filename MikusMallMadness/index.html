@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Miku's Mall Madness Demo</title>
+    <link href="../style.css" rel="stylesheet"> <!-- Link to your main CSS file -->
+</head>
+<body>
+<div class="container">
+    <div class="background-light"></div>
+    <div class="background-light"></div>
+    <!-- Navigation for returning to other website sections -->
+    <header>
+        <nav class="button-container">
+            <button onclick="window.location.href='../index.html'">Overview</button>
+            <button onclick="window.location.href='../projects.html'">Projects</button>
+            <button onclick="window.location.href='../experience.html'">Experience</button>
+            <button onclick="window.location.href='../aboutMe.html'">About me</button>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Miku's Mall Madness Demo</h1>
+        <p>This game </p>
+        <!-- embed is +40px for some reason -->
+        <div class="game-container">
+            <iframe
+                    src="MikusMallMadnessGame.html"
+                    style="width: 640px; height: 440px; border: none;"
+                    title="Miku's Mall Madness">
+            </iframe>
+        </div>
+        <!-- Fallback message if JavaScript is disabled -->
+        <noscript>
+            <p style="color: var(--primary-text-color); text-align: center;">
+                The game requires JavaScript to run. Please enable JavaScript in your browser to play the game.
+            </p>
+        </noscript>
+        <p>Press in the direction you want to move, or on the buttons you want to interact with. Attacks need to be
+            targeting an enemy.</p>
+    </main>
+
+    <!-- Footer section -->
+    <div class="push"></div>
+
+    <footer>
+        <button onclick="window.location.href='../projects.html'">Back to Projects</button>
+    </footer>
+</div>
+</body>
+</html>
