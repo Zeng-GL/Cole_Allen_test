@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Miku's Mall Madness Demo</title>
     <link href="../style.css" rel="stylesheet"> <!-- Link to your main CSS file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="container">
@@ -17,6 +19,7 @@
             <button onclick="window.location.href='../projects.html'">Projects</button>
             <button onclick="window.location.href='../experience.html'">Experience</button>
             <button onclick="window.location.href='../aboutMe.html'">About me</button>
+            <button type="button" class="btn btn-primary">Ah-ha!</button>
         </nav>
     </header>
 
@@ -24,78 +27,24 @@
         <h1>Miku's Mall Madness Demo</h1>
         <p>This game </p>
         <!-- embed is +40px for some reason -->
-        <div class="game-container">
+        <!-- <div class="game-container">
             <iframe
-                    id="game-frame"
-                    src="index.html"
-                    title="Miku's Mall Madness">
+                    src="MikusMallMadnessGame.html"
+                    title="Miku's Mall Madness"
+                    style="width: 100%; height: auto;"
+                    scrolling="no"
+                    >
             </iframe>
+        </div> -->
+        <div class="col-lg-24 col-md-24 col-sm-24">
+            <div class="ratio ratio-16x9">
+              <iframe id="scaledIframe" src="MikusMallMadnessGame.html" style="transform: scale(0.5); transform-origin: 0 0; width: 200%; height: 250%; border: none;"></iframe>
+            </div>
         </div>
-
-        <script>
-            const iframe = document.getElementById('game-frame');
-
-            function resizeCanvas() {
-                const container = iframe.parentElement; // Reference to .game-container
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                const canvas = iframeDoc.getElementById('unity-canvas');
-
-                if (canvas) {
-                    // Get computed styles of the container
-                    const styles = getComputedStyle(container);
-
-                    // Calculate dimensions minus padding and borders
-                    const containerWidth = container.offsetWidth;
-                    const containerHeight = container.offsetHeight;
-                    const paddingLeft = parseFloat(styles.paddingLeft);
-                    const paddingRight = parseFloat(styles.paddingRight);
-                    const paddingTop = parseFloat(styles.paddingTop);
-                    const paddingBottom = parseFloat(styles.paddingBottom);
-                    const borderLeft = parseFloat(styles.borderLeftWidth);
-                    const borderRight = parseFloat(styles.borderRightWidth);
-                    const borderTop = parseFloat(styles.borderTopWidth);
-                    const borderBottom = parseFloat(styles.borderBottomWidth);
-
-                    const width = Math.floor(
-                        containerWidth - paddingLeft - paddingRight - borderLeft - borderRight
-                    );
-                    const height = Math.floor(
-                        containerHeight - paddingTop - paddingBottom - borderTop - borderBottom
-                    );
-
-                    // Debug logging for key values
-                    console.log("=== Resize Debugging ===");
-                    console.log("Container Dimensions:", containerWidth, containerHeight);
-                    console.log("Padding (L, R, T, B):", paddingLeft, paddingRight, paddingTop, paddingBottom);
-                    console.log("Borders (L, R, T, B):", borderLeft, borderRight, borderTop, borderBottom);
-                    console.log("Computed Canvas Size:", width, height);
-
-                    // Update the canvas dimensions
-                    canvas.style.width = `${width}px`;
-                    canvas.style.height = `${height}px`;
-
-                    // Debug canvas style size
-                    console.log("Applied Canvas Style Size:", canvas.style.width, canvas.style.height);
-
-                    // Adjust Unity rendering scale
-                    const unityInstance = iframe.contentWindow.unityInstance;
-                    if (unityInstance) {
-                        unityInstance.SetCanvasSize(width, height, false);
-
-                        // Debug Unity instance scaling
-                        console.log("Unity Instance Canvas Size Set To:", width, height);
-                    }
-                } else {
-                    console.warn("Canvas not found. Ensure Unity WebGL is loaded properly.");
-                }
-            }
-
-
-            // Resize listener to adjust canvas dynamically
-            window.addEventListener('resize', resizeCanvas);
-            iframe.addEventListener('load', resizeCanvas); // Run on iframe load
-        </script>
-
+        <div style="height: 3vh; margin-bottom: 3rem;"></div>
+        <!-- <div style="width: 100%; height: 500px; overflow: hidden;">
+            <iframe id="scaledIframe" src="MikusMallMadnessGame.html" style="transform: scale(0.5); transform-origin: 0 0; width: 200%; height: 250%; border: none;"></iframe>
+        </div>         -->
         <!-- Fallback message if JavaScript is disabled -->
         <noscript>
             <p style="color: var(--primary-text-color); text-align: center;">
